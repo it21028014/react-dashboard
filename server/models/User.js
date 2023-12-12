@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -26,12 +26,13 @@ const userSchema = new mongoose.Schema(
     phoneNumber: String,
     transactions: Array,
     role: {
-      type: ["user", "admin", "superadmin"],
+      type: String,
+      enum: ["user", "admin", "superadmin"],
       default: "admin",
     },
   },
   { timestamps: true }
 );
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("User", UserSchema);
 export default User;
