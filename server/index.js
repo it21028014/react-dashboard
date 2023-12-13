@@ -29,7 +29,9 @@ app.use(cors());
 //ROUTES
 
 app.use("/client", clientRoutes);
-app.use("general", generalRoutes);
+console.log("Going into this one /client ");
+app.use("/general", generalRoutes);
+console.log("Going into this one /general ");
 app.use("/management", managementRoutes);
 app.use("/sales", salesRoutes);
 
@@ -45,5 +47,6 @@ mongoose
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
     User.insertMany(dataUser);
+    console.log("Going into this one " + dataUser);
   })
   .catch((error) => console.log(`${error} didn't connect`));

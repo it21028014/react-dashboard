@@ -1,3 +1,6 @@
+import fs from "fs";
+
+console.log(fs.readdirSync("../models"));
 import User from "../models/User";
 
 export const getUser = async (req, res) => {
@@ -6,6 +9,6 @@ export const getUser = async (req, res) => {
     const user = await User.findById(id);
     res.status(200).json(user);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    console.log(error);
   }
 };
