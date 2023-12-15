@@ -1,7 +1,4 @@
-import fs from "fs";
-
-console.log(fs.readdirSync("../models"));
-import User from "../models/User";
+import User from "../models/User.js";
 
 export const getUser = async (req, res) => {
   try {
