@@ -52,6 +52,7 @@ const Product = ({
           ${Number(price).toFixed(2)}
         </Typography>
         <Rating value={rating} readOnly />
+        <br />
         <Typography variant="body2 ">{description}</Typography>
       </CardContent>
       <CardActions>
@@ -92,7 +93,8 @@ const Products = () => {
   return (
     <Box m={"1.5rem 2.5rem"}>
       <Header title={"PRODUCTS"} subtitle={"The list of products"} />
-      {data && !isLoading ? ( // Check if data is defined and not loading
+      {data && !isLoading ? (
+        // Check if data is defined and not loading
         <Box
           mt={"20px"}
           display="grid"
